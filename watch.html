@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{background:#0f1724}
+        html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,monospace;background:linear-gradient(135deg,#071226 0%,#0f1724 100%);color:#e6eef8}
+        body{display:flex;align-items:center;justify-content:center}
+        .watch{
+            width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#1b2a3a 0%,#0f1724 60%);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(2,6,23,0.7), inset 0 -6px 20px rgba(255,255,255,0.03);
+            position:relative;backdrop-filter:blur(6px)
+        }
+        .face-ring{position:absolute;inset:12px;border-radius:50%;border:6px solid rgba(230,238,248,0.06);box-shadow:inset 0 6px 18px rgba(255,255,255,0.02)}
+        h1{font-size:48px;letter-spacing:2px;margin:0;background:linear-gradient(90deg,#dff3ff,#9fd8ff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 24px rgba(31,58,92,0.45)}
+        .sub{position:absolute;bottom:18px;font-size:12px;color:rgba(230,238,248,0.6)}
+        .dot{position:absolute;top:18px;right:18px;width:14px;height:14px;background:#2ee6a7;border-radius:50%;box-shadow:0 0 12px rgba(46,230,167,0.55)}
+    </style>
+</head>
+<body>
+    <div class="watch">
+        <div class="face-ring"></div>
+        <div class="dot"></div>
+        <h1></h1>
+        <div class="sub">Local Time</div>
+    </div>
+</body>
+<script>
+    let head = document.querySelector ("h1")
+    function two(n){return n.toString().padStart(2,'0')}
+    let now = setInterval(()=>{
+        let today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let se = today.getSeconds();
+        let time = `${two(h)}:${two(m)}:${two(se)}`;
+        head.textContent = time;
+    },1000);
+     
+    
+    
+      
+    // head is already in DOM inside .watch
+    
+
+    // let today = new Date();
+    
+    // let hours = today.getHours()
+    // // console.log (hours)
+    // let minutes = today.getMinutes();
+    // // console.log (minutes)
+    // let sec = today.getSeconds()
+    // // console.log (sec);
+    // let time = `${hours}:${minutes}:${sec}`
+    // console.log (time)
+    // let head = document.querySelector ("h1")
+    // head.innerHTML = time;
+    // let newtime = setInterval (()=>{
+
+    // },1000)
+    // document.body.appendChild ("head")
+//   let inte = setInterval(()=>{
+//      console.log ("hello friend");
+//     },1000)
+//    setTimeout(()=>{
+//     clearInterval (inte)
+//    },5000)
+</script>
+</html>
